@@ -8,7 +8,7 @@
     {
       "description": "Terraform Provider for Official wiz provider",
       "matchManagers": ["terraform"],
-      "sourceUrl": ["https://tf.app.wiz.io"],
+      "sourceUrl": "https://tf.app.wiz.io",
       "matchPackageNames": ["wiz", "tf.app.wiz.io/wizsec/wiz", "wizsec/wiz"],
       "enabled": true
     }
