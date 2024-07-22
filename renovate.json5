@@ -19,8 +19,9 @@
         "(^|/)cdktf\\.json$"
       ],
       "matchStrings": [
-        "[\\s\\S]*?\\\"name\\\": \\\"(?<depName>.*?)\\\",[\\s\\S]*?\\\"source\\\": \\\"(?<registryUrl>(?:\\w+\\.\\w+){1,}\\/)?(?<packageName>[^\\.]*?)\\\",[\\s\\S]*?\\\"version\\\": \\\"(?<currentValue>[=><~\\s\\w+\\.\\-]*)\\\""
+        "[\\s\\S]*?\\\"name\\\": \\\"(?<depName>.*?)\\\",[\\s\\S]*?\\\"source\\\": \\\"(?<registryHost>(?:\\w+\\.\\w+){1,}\\/)?(?<packageName>[^\\.]*?)\\\",[\\s\\S]*?\\\"version\\\": \\\"(?<currentValue>[=><~\\s\\w+\\.\\-]*)\\\""
       ],
+      "registryUrlTemplate": "{{{registryHost}}}",
       "datasourceTemplate": "terraform-provider"
     }
   ]
