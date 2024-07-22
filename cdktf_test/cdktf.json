@@ -8,6 +8,11 @@
       "name": "wiz",
       "source": "tf.app.wiz.io/wizsec/wiz",
       "version": "1.13.3433"
+    },
+    {
+      "name": "jira",
+      "source": "fourplusone/jira",
+      "version": "0.1.20"
     }
   ],
   "terraformModules": [],
