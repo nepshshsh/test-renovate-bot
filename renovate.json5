@@ -21,7 +21,7 @@
       "matchStrings": [
         "[\\s\\S]*?\\\"name\\\": \\\"(?<depName>.*?)\\\",[\\s\\S]*?\\\"source\\\": \\\"(?<registryHost>(?:\\w+\\.\\w+){1,}\\/)?(?<packageName>[^\\.]*?)\\\",[\\s\\S]*?\\\"version\\\": \\\"(?<currentValue>[=><~\\s\\w+\\.\\-]*)\\\""
       ],
-      "registryUrlTemplate": "{{{registryHost}}}",
+      "registryUrlTemplate": "https://{{{registryHost}}}",
       "datasourceTemplate": "terraform-provider"
     }
   ]
