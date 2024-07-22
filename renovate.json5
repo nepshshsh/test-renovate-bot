@@ -3,16 +3,16 @@
   "extends": [
     "config:recommended"
   ],
+  "enabledManagers": ["custom.regex"],
   "packageRules": [
     {
       "description": "Terraform Provider for Official wiz provider",
-      "managers": ["terraform"],
-      "registryUrls": ["https://tf.app.wiz.io"],
-      "packageNames": ["wiz", "tf.app.wiz.io/wizsec/wiz", "wizsec/wiz"],
+      "matchManagers": ["terraform"],
+      "sourceUrl": ["https://tf.app.wiz.io"],
+      "matchPackageNames": ["wiz", "tf.app.wiz.io/wizsec/wiz", "wizsec/wiz"],
       "enabled": true
     }
   ],
-  "enabledManagers": ["custom.regex"],
   "customManagers": [{
     "customType": "regex",
     "fileMatch": ["(^|/)cdktf\\.json$"],
