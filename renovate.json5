@@ -6,7 +6,7 @@
   "hostRules": [
     {
       "matchHost": "https://tf.app.wiz.io/",
-      "hostType": "terraform"
+      "hostType": "terraform-provider"
     }
   ],
   "enabledManagers": [
