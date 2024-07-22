@@ -4,6 +4,7 @@
     "config:recommended"
   ],
   "enabledManagers": ["custom.regex"],
+  "registryUrls": ["https://tf.app.wiz.io"],
   "packageRules": [
     {
       "description": "Terraform Provider for Official wiz provider",
