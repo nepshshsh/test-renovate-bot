@@ -1,0 +1,17 @@
+{
+  "language": "python",
+  "app": "python3 main.py",
+  "projectId": "xxxxx-xxxxx-xxxxx-xxxxx",
+  "sendCrashReports": "true",
+  "terraformProviders": [
+    {
+      "name": "wiz",
+      "source": "tf.app.wiz.io/wizsec/wiz",
+      "version": "1.13.3433"
+    }
+  ],
+  "terraformModules": [],
+  "codeMakerOutput": "imports",
+  "context": {
+  }
+}

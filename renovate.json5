@@ -1,0 +1,24 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "packageRules": [
+    {
+      "description": "Terraform Provider for Official wiz provider",
+      "managers": ["terraform"],
+      "registryUrls": ["https://tf.app.wiz.io"],
+      "packageNames": ["wiz"],
+      "enabled": true
+    }
+  ],
+  "enabledManagers": ["custom.regex"],
+  "customManagers": [{
+    "customType": "regex",
+    "fileMatch": ["(^|/)cdktf\\.json$"],
+    "matchStrings": [
+      "[\\s\\S]*?\\\"name\\\": \\\"(?<depName>.*?)\\\",[\\s\\S]*?\\\"source\\\": \\\"(?<packageName>.*?)\\\",[\\s\\S]*?\\\"version\\\": \\\"(?<currentValue>[=><~\\s\\w+\\.\\-]*)\\\""
+    ],
+    "datasourceTemplate": "terraform-provider"
+  }]
+}
