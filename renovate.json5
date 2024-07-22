@@ -8,7 +8,7 @@
       "matchHost": "https://tf.app.wiz.io/",
       "hostType": "terraform",
     }
-  ]
+  ],
   "enabledManagers": ["custom.regex"],
   "customManagers": [{
     "customType": "regex",
