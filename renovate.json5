@@ -4,12 +4,11 @@
     "config:recommended"
   ],
   "enabledManagers": ["custom.regex"],
-  "registryUrls": ["https://tf.app.wiz.io"],
   "customManagers": [{
     "customType": "regex",
     "fileMatch": ["(^|/)cdktf\\.json$"],
     "matchStrings": [
-      "[\\s\\S]*?\\\"name\\\": \\\"(?<depName>.*?)\\\",[\\s\\S]*?\\\"source\\\": \\\"(?<packageName>.*?)\\\",[\\s\\S]*?\\\"version\\\": \\\"(?<currentValue>[=><~\\s\\w+\\.\\-]*)\\\""
+      "[\s\S]*?\"name\": \"(?<depName>.*?)\",[\s\S]*?\"source\": \"(?<sourceUrl>(?:\w+\.\w+){1,}\/)?(?<packageName>[^\.]*?)\",[\s\S]*?\"version\": \"(?<currentValue>[=><~\s\w+\.\-]*)\""
     ],
     "datasourceTemplate": "terraform-provider"
   }]
