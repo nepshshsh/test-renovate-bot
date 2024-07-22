@@ -8,7 +8,7 @@
       "description": "Terraform Provider for Official wiz provider",
       "managers": ["terraform"],
       "registryUrls": ["https://tf.app.wiz.io"],
-      "packageNames": ["wiz"],
+      "packageNames": ["wiz", "tf.app.wiz.io/wizsec/wiz", "wizsec/wiz"],
       "enabled": true
     }
   ],
