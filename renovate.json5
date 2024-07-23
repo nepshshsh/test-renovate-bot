@@ -3,12 +3,6 @@
   "extends": [
     "config:recommended"
   ],
-  "hostRules": [
-    {
-      "matchHost": "https://tf.app.wiz.io/",
-      "hostType": "terraform-provider"
-    }
-  ],
   "enabledManagers": [
     "custom.regex"
   ],
