@@ -17,9 +17,7 @@
       ],
       "registryUrlTemplate": "https://{{{registryHost}}}",
       "datasourceTemplate": "terraform-provider"
-    }
-  ],
-  "regexManagers": [
+    },
     {
       "fileMatch": [
         "(^|/)Dockerfile$",
