@@ -4,4 +4,6 @@ FROM public.ecr.aws/lambda/python:3.12
 ARG TERRAFORM_VERSION=1.7.4
 
 ARG CDKTF_VERSION=0.20.5
+
+# renovate: datasource=terraform-provider depName=wiz extractVersion=^v(?<version>.*)$
 ARG WIZ_TERRAFORM_PROVIDER_VERSION=1.14.3994
