@@ -19,7 +19,6 @@
       "datasourceTemplate": "terraform-provider"
     },
     {
-      "customType": "regex",
       "fileMatch": [
         "(^|/)Dockerfile$",
         "(^|/)Dockerfile\\.[^/]*$"
