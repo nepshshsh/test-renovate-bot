@@ -30,7 +30,7 @@
   ],
   "packageRules": [
     {
-      "updateTypes": ["major"],
+      "updateTypes": ["major", "minor"],
       "matchPackageNames": ["wiz"]
     }
   ]
