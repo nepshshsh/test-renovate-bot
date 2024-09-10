@@ -5,5 +5,5 @@ ARG TERRAFORM_VERSION=1.7.4
 
 ARG CDKTF_VERSION=0.20.5
 
-# renovate: datasource=terraform-provider depName=wiz extractVersion=^v(?<version>.*)$
+# renovate: datasource=terraform-provider registryUrl=https://tf.app.wiz.io depName=wiz packageName=wizsec/wiz extractVersion=^v(?<version>.*)$
 ARG WIZ_TERRAFORM_PROVIDER_VERSION=1.14.3994
