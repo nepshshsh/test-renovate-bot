@@ -27,5 +27,11 @@
         "#\\srenovate:\\sdatasource=(?<datasource>.*?)( registryUrl=(?<registryUrl>.*?))?( sourceUrl=(?<sourceUrl>.*?))? depName=(?<depName>.*?)( packageName=(?<packageName>.*?))?( versioning=(?<versioning>.*?))?( extractVersion=(?<extractVersion>.*?))?\\s*\\n(ENV|ARG) .*?_VERSION=(?<currentValue>.*)\\s"
       ]
     }
+  ],
+  "packageRules": [
+    {
+      "updateTypes": ["major"],
+      "matchPackageNames": ["wiz"]
+    }
   ]
 }
