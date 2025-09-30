@@ -46,6 +46,8 @@
       matchStrings: [
         '#\\s*renovate:\\s*datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s.*?_version\\s*=\\s*"(?<currentValue>.*)"',
       ],
+      "datasourceTemplate": "{{#if datasource}}{{{datasource}}}{{else}}custom.eks-supported{{/if}}",
+      "depNameTemplate": "{{{depName}}}",
       "datasourceTemplate": "custom.eks-supported",
       versioningTemplate: '{{#if versioning}}{{{versioning}}}{{/if}}',
     },
