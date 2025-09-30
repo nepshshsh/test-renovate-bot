@@ -6,6 +6,16 @@
   "enabledManagers": [
     "custom.regex"
   ],
+  "customDatasources": {
+    "eks-supported": {
+      "defaultRegistryUrlTemplate": "https://endoflife.date/api/v1/products/amazon-eks/",
+      "format": "json",
+      "transformTemplates": [
+        /* Keep versions still in STANDARD support only */
+        "{ \"releases\": $map($[releases][status='supported'], function($r){ {\"version\": $r.cycle} }) }"
+      ]
+    },
+  },
   "customManagers": [
     {
       "customType": "regex",
@@ -36,6 +46,7 @@
       matchStrings: [
         '#\\s*renovate:\\s*datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s.*?_version\\s*=\\s*"(?<currentValue>.*)"',
       ],
+      "datasourceTemplate": "custom.eks-supported",
       versioningTemplate: '{{#if versioning}}{{{versioning}}}{{/if}}',
     },
   ],
