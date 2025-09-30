@@ -20,7 +20,7 @@
     {
       customType: 'regex',
       description: 'Track versions that have end-of-life (EOL) dates via endoflife.date',
-      managerFilePatterns: [
+      fileMatch: [
         '\\.rego$',
       ],
       matchStrings: [
