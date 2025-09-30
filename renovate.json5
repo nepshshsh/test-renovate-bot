@@ -31,7 +31,7 @@
       customType: 'regex',
       description: 'Track versions that have end-of-life (EOL) dates via endoflife.date',
       managerFilePatterns: [
-        '\\.rego$',
+        '(^|/).+?\\.rego$',
       ],
       matchStrings: [
         '#\\s*renovate:\\s*datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s.*?_version\\s*=\\s*"(?<currentValue>.*)"',
