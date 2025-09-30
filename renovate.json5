@@ -12,7 +12,7 @@
       "format": "json",
       "transformTemplates": [
         /* Keep versions still in STANDARD support only */
-        "{ \"releases\": { \"version\": $.result.releases[isEol = false]^(releaseDate)[0].name } }"
+        "{ \"releases\": [{ \"version\": $.result.releases[isEol = false]^(releaseDate)[0].name }] }"
       ]
     },
   },
