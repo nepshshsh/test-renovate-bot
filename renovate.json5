@@ -7,7 +7,7 @@
     "custom.regex"
   ],
   "customDatasources": {
-    "eks-supported": {
+    "eks-last-supported": {
       "defaultRegistryUrlTemplate": "https://endoflife.date/api/v1/products/amazon-eks/",
       "format": "json",
       "transformTemplates": [
@@ -18,15 +18,14 @@
   },
   "customManagers": [
     {
-      "customType": "regex",
-      "fileMatch": [
-        "(^|/)cdktf\\.json$"
+      customType: 'regex',
+      description: 'Track versions that have end-of-life (EOL) dates via endoflife.date',
+      managerFilePatterns: [
+        '\\.rego$',
       ],
-      "matchStrings": [
-        "[\\s\\S]*?\\\"name\\\": \\\"(?<depName>.*?)\\\",[\\s\\S]*?\\\"source\\\": \\\"(?<registryHost>(?:\\w+\\.\\w+){1,}\\/)?(?<packageName>[^\\.]*?)\\\",[\\s\\S]*?\\\"version\\\": \\\"(?<currentValue>[=><~\\s\\w+\\.\\-]*)\\\""
-      ],
-      "registryUrlTemplate": "https://{{{registryHost}}}",
-      "datasourceTemplate": "terraform-provider"
+      matchStrings: [
+        '#\\s*renovate:\\s*datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s.*?_version\\s*=\\s*"(?<currentValue>.*)"',
+      ]
     },
     {
       "fileMatch": [
@@ -54,15 +53,6 @@
     {
       "updateTypes": ["major", "minor"],
       "matchPackageNames": ["wiz"]
-    },
-    {
-      matchDatasources: [
-        'endoflife-date',
-      ],
-      matchPackageNames: [
-        'amazon-eks',
-      ],
-      extractVersion: '^(?<version>.*)-eks.+$',
     },
   ]
 }
