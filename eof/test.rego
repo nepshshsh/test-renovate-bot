@@ -2,5 +2,5 @@
 
 
 
-# renovate: datasource=custom.eks-supported depName=amazon-eks versioning=loose
+# renovate: datasource=custom.eks-last-supported depName=amazon-eks versioning=loose
 kubernetes_version = "1.27"
