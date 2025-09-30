@@ -42,5 +42,14 @@
       "updateTypes": ["major", "minor"],
       "matchPackageNames": ["wiz"]
     },
+    {
+      description: 'Only update dependencies under /cguard when targeting cguard/dev',
+      matchBaseBranches: [
+        'test/dev',
+      ],
+      matchFileNames: [
+        'eof/**',
+      ],
+    },
   ]
 }
