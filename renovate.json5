@@ -6,13 +6,15 @@
   "enabledManagers": [
     "custom.regex"
   ],
-  "customDatasources": {
-    "eks-last-supported": {
-      "defaultRegistryUrlTemplate": "https://endoflife.date/api/v1/products/amazon-eks/",
-      "format": "json",
-      "transformTemplates": [
-        /* Keep versions still in STANDARD support only */
-        "{ \"releases\": [{ \"version\": $.result.releases[isEol = false]^(releaseDate)[0].name }] }"
+  baseBranchPatterns: [
+    'test/dev'
+  ],
+  'customDatasources': {
+    'eks-last-supported': {
+      'defaultRegistryUrlTemplate': 'https://endoflife.date/api/v1/products/amazon-eks/',
+      'format': 'json',
+      'transformTemplates': [
+        '{ "releases": [{ "version": $.result.releases[isEol = false]^(releaseDate)[0].name }] }'
       ]
     },
   },
@@ -41,6 +43,18 @@
     {
       "updateTypes": ["major", "minor"],
       "matchPackageNames": ["wiz"]
+    },
+    {
+      description: 'Only update dependencies under /eof when targeting test/dev',
+      matchDatasources: [
+        'custom.eks-last-supported'
+      ],
+      matchBaseBranches: [
+        'test/dev',
+      ],
+      matchFileNames: [
+        'eof/**',
+      ],
     },
   ]
 }
