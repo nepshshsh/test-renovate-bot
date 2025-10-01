@@ -7,7 +7,7 @@
     "custom.regex"
   ],
   baseBranchPatterns: [
-    'test/dev', 'main'
+    'test/dev', 'main', "!/^pre-release\\/.*/"
   ],
   'customDatasources': {
     'eks-last-supported': {
@@ -43,13 +43,8 @@
     {
       "updateTypes": ["major", "minor"],
       "matchPackageNames": ["wiz"],
-      'branchPrefix': 'release/',
-      'branchName': 'release/{{newVersion}}',
-      'commitMessagePrefix': 'release: ',
-      'commitMessageTopic': 'Wiz provider to {{newVersion}}',
-      'commitMessageExtra': '',
-      'prTitle': 'Release: Update Wiz provider to {{newVersion}}',
-      'prBodyTemplate': '## Wiz Provider Version Update\\n\\nThis PR updates the Wiz Terraform provider from `{{currentVersion}}` to `{{newVersion}}`.\\n\\n### Changes\\n- Updated `cdktf.json` with new Wiz provider version\\n- This will trigger a release build with version `{{newVersion}}`\\n\\n### Next Steps\\n1. Review the changes\\n2. Merge this PR to create a release\\n3. The release workflow will automatically build and publish the package\\n\\n---\\n*This PR was automatically created by Renovate Bot*'
+      'baseBranchPatterns': ["!/^pre-release\\/.*/"]б
+      'branchTopic': '{{newVersion}}',
     },
     {
       description: 'Only update dependencies under /eof when targeting test/dev',
