@@ -46,6 +46,9 @@
     },
     {
       description: 'Only update dependencies under /eof when targeting test/dev',
+      matchDatasources: [
+        'custom.eks-last-supported'
+      ],
       matchBaseBranches: [
         'test/dev',
       ],
