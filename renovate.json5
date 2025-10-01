@@ -45,11 +45,11 @@
       "matchPackageNames": ["wiz"]
     },
     {
-      description: 'Only update dependencies under /cguard when targeting cguard/dev',
+      description: 'Only update dependencies under /eof when targeting test/dev',
       matchBaseBranches: [
         'test/dev',
       ],
-      matchPaths: [
+      matchFileNames: [
         'eof/**',
       ],
     },
