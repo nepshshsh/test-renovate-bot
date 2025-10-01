@@ -7,7 +7,7 @@
     "custom.regex"
   ],
   baseBranchPatterns: [
-    'test/dev', 'main'
+    'test/dev'
   ],
   'customDatasources': {
     'eks-last-supported': {
