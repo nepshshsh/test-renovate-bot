@@ -46,15 +46,18 @@
     },
     {
       description: 'Only update dependencies under /eof when targeting test/dev',
-      matchDatasources: [
-        'custom.eks-last-supported'
-      ],
       matchBaseBranches: [
         'test/dev',
       ],
       matchFileNames: [
         'eof/**',
       ],
+    },
+    {
+      "description": "Disable /test updates on any other base",
+      "matchFileNames": ["eof/**"],
+      "excludeBaseBranches": ["test/dev"],
+      "enabled": false
     },
   ]
 }
