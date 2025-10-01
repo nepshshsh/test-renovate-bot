@@ -49,7 +49,7 @@
       matchBaseBranches: [
         'test/dev',
       ],
-      matchFileNames: [
+      matchPaths: [
         'eof/**',
       ],
     },
